@@ -1,0 +1,51 @@
+#index.html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <style>
+      .name{color:DodgerBlue;}
+      h1{color:Red}
+    </style>
+  </head>
+  <body>
+      <h1 class="title1">Form</h1>
+      <h2 class="title2">Form css</h2>
+      <div style="margin-left: 80px;">
+        <form>
+          <label for="avatar">profile picture:</label><br>
+          <input type="file" accept="image/png, image/jpeg" /><br><br>
+          <label class="name">Name</label><br>
+          <input type="text"><br>
+          <label>Email</label><br>
+          <input type="email"><br>
+          <label>password</label><br>
+          <input type="password"><br><br>
+          <label>Sex:</label><br>
+          <label>Male</label>
+          <input type="radio" name="sex" value="Male">
+          <label>Female</label>
+          <input type="radio" name="sex" value="Female"><br><br>
+          <label>State</label>
+          <select>
+            <option>Kerala</option>
+            <option>Assam</option>
+            <option>Bihar</option>
+            <option>Bombay</option>
+          </select><br>
+          <label>Noob?</label>
+          <input type="checkbox"><br><br>
+          <input type="submit">
+
+
+        </form>  
+      </div>
+      
+  </body>
+</html>
+
+#styles.css
+h2{
+  color:rgb(1,255,240);
+}
