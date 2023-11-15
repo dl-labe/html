@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <label>Input</label><br>
+    <input type="text" id="inputText"><br>
+    <label>Key pressed:</label>
+    <p id="pressed"></p><br>
+    <label>Key type:</label>
+    <p id="type"></p><br>
+    <label>mouse Event</label><br>
+    <div id="mouse_event" style="width:100px; height:100px; background-color: red;">
+    </div>
+    <script>
+    // mousedown mouseover dblclick click mouseup
+      // document.getElementById("mouse_event").addEventListener("mouseover",function(){alert("mouse ontop")});
+      document.getElementById("mouse_event").addEventListener("dblclick",function(){alert("mouse db")});
+      document.getElementById("mouse_event").addEventListener("click",function(){alert("mouse clicked")});
+    // onkeydown onkeypress onkeyup
+      document.getElementById("inputText").addEventListener("keydown",function(event)
+      {document.getElementById("pressed").innerHTML=event.key})
+      document.getElementById("inputText").addEventListener("keyup",function(event)
+      {document.getElementById("type").innerHTML=event.key})
+    </script>
+  </body>
+</html>
