@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        jquery trials
+    </title>
+</head>
+<body>
+    <p Id="para">this is para 1</p>
+    <br>
+    <br>
+    <h1>This is head 1</h1><br><br>
+    <button class="head">This is button</button>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+        // $(document).ready(function(){
+        //     $('button').click(function(){
+        //         $('p').css('background','black');
+        //         fun($('h1').text());
+        //     });
+        // });
+
+        // function fun(a){
+        //     document.getElementsByTagName('p').innerHTML='hello';
+        // }
+    </script>
+    <script>
+                $(document).ready(function(){
+            $('.head').click(function(){
+               // $('p').css('background','black');
+                document.getElementById('para').innerHTML=$('h1').text();
+            });
+        });
+
+        function fun(a){
+            document.getElementsByClassName('.head').innerHTML='hello';
+        }
+    </script>
+</body>
