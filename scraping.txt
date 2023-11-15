@@ -1,3 +1,39 @@
+cmd:
+pip install scrapy
+scrapy startproject myProj
+cd myProj
+scrapy genspider quotes http://quotes.toscrape.com/ 
+
+
+quotes.py:
+   def parse(self, response):
+        data = response.css('.quote *::text').getall()
+        yield{
+            'quote':data
+        }
+
+
+cmd:
+scrapy crawl quotes -o output.json
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 cmd
 pip instal scrapy
 scrapy startproject scrapeme_scraper
