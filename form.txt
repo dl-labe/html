@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form</title>
+    <style>
+
+    </style>
+  </head>
+  <body>
+      <h1 class="title">Form</h1>
+      <div>
+        <form>
+          <label for="avatar">profile picture:</label><br>
+          <input type="file" accept="image/png, image/jpeg" /><br><br>
+          <label>Name</label><br>
+          <input type="text"><br>
+          <label>Email</label><br>
+          <input type="email"><br>
+          <label>password</label><br>
+          <input type="password"><br><br>
+          <label>Sex:</label><br>
+          <label>Male</label>
+          <input type="radio" name="sex" value="Male">
+          <label>Female</label>
+          <input type="radio" name="sex" value="Female"><br><br>
+          <label>State</label>
+          <select>
+            <option>Kerala</option>
+            <option>Assam</option>
+            <option>Bihar</option>
+            <option>Bombay</option>
+          </select><br>
+          <label>Noob?</label>
+          <input type="checkbox"><br><br>
+          <input type="submit">
+        </form>  
+      </div>
+      
+  </body>
+</html>
