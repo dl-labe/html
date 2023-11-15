@@ -10,11 +10,11 @@
   <body>
     <h1 class="title">body</h1>
     <div id ="container">
-    	<div id ="image_container">
-    		<img src="https://qph.cf2.quoracdn.net/main-qimg-b3cf3937c519d328908d3d046eaccbfc.webp" usemap="#image_map">
-    		<map name="image_map">
-    			<area alt="oil" title="oil" target="_blank" href="link" coords="">
-    	</div>
+      <div id ="image_container">
+        <img src="https://qph.cf2.quoracdn.net/main-qimg-b3cf3937c519d328908d3d046eaccbfc.webp" usemap="#image_map">
+        <map name="image_map">
+        <area alt="oil" title="oil" target="_blank" href="link" coords="">
+      </div>
     </div>
   </body>
 </html>
