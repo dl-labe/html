@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Registration Form</title>
+  </head>
+  <body>
+    <h2>Registration Form</h2>
+    <form onsubmit="return validateForm()">
+      <div>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <p id="usernameError" style="color: red;"></p>
+      </div>
+      
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <p id="emailError" style="color: red;"></p>
+      </div>
+      
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      
+      <div>
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" required>
+        <p id="passwordError" style="color: red;"></p>
+      </div>
+      
+      <button type="submit">Register</button>
+    </form>
+    
+    <script>
+      function validateForm() {
+        var username = document.getElementById('username').value;
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+        var confirmPassword = document.getElementById('confirmPassword').value;
+        var usernameError = document.getElementById('usernameError');
+        var emailError = document.getElementById('emailError');
+        var passwordError = document.getElementById('passwordError');
+        if (username.length < 3) {
+        usernameError.textContent = 'Username must be at least 3 characters.';
+        return false;
+        } else {
+        usernameError.textContent = '';}
+        if (!isValidEmail(email)) {
+        emailError.textContent = 'Invalid email address.';
+        return false;} 
+        else {
+        emailError.textContent = '';}
+        if (password !== confirmPassword) {
+        passwordError.textContent = 'Passwords do not match.';
+        return false;
+        } else {
+        passwordError.textContent = '';}
+        return true;}
+      function isValidEmail(email) {
+      var emailRegex = /S+@S+.S+/;
+      return emailRegex.test(email);}
+    </script>
+  </body>
+</html>
