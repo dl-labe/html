@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Bootstrap Example</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+// bootstrap table
+<div class="container">
+<h2>Basic Table</h2>
+<table class="table">
+<thead>
+<tr>
+<th>Firstname</th>
+<th>Lastname</th>
+<th>Email</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AAAAA</td>
+<td>BBBBB</td>
+<td>AAAAABBB@example.com</td>
+</tr>
+<tr>
+<td>CCCCC</td>
+<td>DDDDDD</td>
+<td>CCCCCDDD@example.com</td>
+</tr>
+<tr>
+<td>EEEEE</td>
+<td>FFFFF</td>
+<td>EEEEFF@example.com</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+//bootstrap image
+Rounded Corners
+<img src="cinqueterre.jpg" class="rounded" alt="Cinque Terre">
+Circle
+<img src="cinqueterre.jpg" class="rounded-circle" alt="Cinque Terre">
+Thumbnail
+<img src="cinqueterre.jpg" class="img-thumbnail" alt="Cinque Terre">
+
+
+//Bootstrap buttons
+<button type="button" class="btn">Basic</button>
+<button type="button" class="btn btn-primary">Primary</button>
+
+//Bootstrap alert
+.alert-success, .alert-info, .alert-warning or .alert-danger:
+<div class="alert alert-success">
+<strong>Success!</strong> Indicates a successful or positive action.
+</div>
+
+
+//Basic Dropdown
+<div class="dropdown">
+<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+Dropdown button
+</button>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="#">Link 1</a>
+<a class="dropdown-item" href="#">Link 2</a>
+<a class="dropdown-item" href="#">Link 3</a>
+</div>
+</div>
+
+
+//form
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Bootstrap Example</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+  <body>
+    <form action="/action_page.php" class="was-validated">
+    <div class="form-group">
+    <label for="uname">Username:</label>
+    <input type="text" class="form-control" id="uname" placeholder="Enter username"
+    name="uname" required>
+    <div class="valid-feedback">Valid.</div>
+    <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+    <div class="form-group">
+    <label for="pwd">Password:</label>
+    <input type="password" class="form-control" id="pwd" placeholder="Enter password"
+    name="pswd" required>
+    <div class="valid-feedback">Valid.</div>
+    <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+    <div class="form-group form-check">
+    <label class="form-check-label">
+    
+    <input class="form-check-input" type="checkbox" name="remember" required> I agree.
+    <div class="valid-feedback">Valid.</div>
+    <div class="invalid-feedback">Check this checkbox to continue.</div>
+    </label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </body>
+</html>
