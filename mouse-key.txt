@@ -14,7 +14,7 @@
     <div id="mouse_event" style="width:100px; height:100px; background-color: red;">
     </div>
     <script>
-    // mousedown mouseover dblclick click mouseup
+    // mousedown mouseover dblclick click mouseup mouseenter
       // document.getElementById("mouse_event").addEventListener("mouseover",function(){alert("mouse ontop")});
       document.getElementById("mouse_event").addEventListener("dblclick",function(){alert("mouse db")});
       document.getElementById("mouse_event").addEventListener("click",function(){alert("mouse clicked")});
