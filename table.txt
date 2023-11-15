@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Table</title>
+    <style>
+      table, td, th{
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+      <h1 class="title">Table</h1>
+      <table>
+        <th>Si</th>
+        <th>Name</th>
+        <th>number</th>
+        <tr>
+          <td>1</td>
+          <td>name1</td>
+          <td>911</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>name2</td>
+          <td>420</td>
+        </tr>
+      </table>
+  </body>
+</html>
