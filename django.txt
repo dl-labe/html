@@ -1,0 +1,70 @@
+cmd:
+django-admin startproject mysite
+
+change to same dir as manage.py
+python manage.py startapp polls
+
+polls/views.py
+from django.http import HttpResponse
+def index(request):
+return HttpResponse("Hello, world. You're at the polls index.")
+
+polls/urls.py
+from django.urls import path
+from . import views
+urlpatterns = [
+path("", views.index, name="index"),
+]
+
+mysite/urls.py
+from django.contrib import admin
+from django.urls import include, path
+urlpatterns = [
+path("polls/", include("polls.urls")),
+path("admin/", admin.site.urls),
+]
+
+cmd:
+python manage.py migrate
+
+polls/models.py
+from django.db import models
+class Question(models.Model):
+question_text = models.CharField(max_length=200)
+pub_date = models.DateTimeField("date published")
+def __str__(self):
+return self.question_text
+class Choice(models.Model):
+question = models.ForeignKey(Question, on_delete=models.CASCADE)
+choice_text = models.CharField(max_length=200)
+votes = models.IntegerField(default=0)
+def __str__(self):
+return self.choice_text
+
+mysite/settings.py
+INSTALLED_APPS = [
+"polls.apps.PollsConfig", //this wont be available initially, type this inside INSTALLED_APPS
+"django.contrib.admin",
+"django.contrib.auth",
+"django.contrib.contenttypes",
+"django.contrib.sessions",
+"django.contrib.messages",
+"django.contrib.staticfiles",
+]
+
+cmd:
+python manage.py makemigrations polls
+
+cmd:
+python manage.py sqlmigrate polls 0001
+
+cmd:
+python manage.py migrate
+
+*imp: ensure u are in right directory
+create admin user(cmd):
+python manage.py createsuperuser
+//set username, pass, email
+
+cmd://start server
+python manage.py runserver
