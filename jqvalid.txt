@@ -55,7 +55,7 @@
       return errors.filter('.error:empty').length === 0;
       }
       function isValidEmail(email) {
-      const emailRegex = /S+@S+.S+/;
+      const emailRegex = ^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*$;  // /S+@S+.S+/
       return emailRegex.test(email);
       }
       });
