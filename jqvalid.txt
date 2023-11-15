@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>jQuery Form Validation</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <h2>Registration Form</h2>
+    <form id="registrationForm">
+      <div>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+        <p class="error" id="usernameError"></p>
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        <p class="error" id="emailError"></p>
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+      </div>
+      <div>
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword">
+        <p class="error" id="passwordError"></p>
+      </div>
+      <button type="submit">Register</button>
+    </form>
+    <button id="submittedAlert" style="display: none">Submitted</button>
+    <script>
+      $(document).ready(function () {
+      $('#registrationForm').submit(function (event) {
+      event.preventDefault();
+      if (validateForm()) {
+      $('#submittedAlert').show();
+      }
+      });
+      function validateForm() {
+      const username = $('#username').val();
+      const email = $('#email').val();
+      const password = $('#password').val();
+      const confirmPassword = $('#confirmPassword').val();
+      const errors = $('.error').text('');
+      if (username.length < 3) {
+      errors.filter('#usernameError').text('Username must be at least 3 characters.');
+      }
+      if (!isValidEmail(email)) {
+      errors.filter('#emailError').text('Invalid email address.');
+      }
+      if (password !== confirmPassword) {
+      errors.filter('#passwordError').text('Passwords do not match.');
+      }
+      return errors.filter('.error:empty').length === 0;
+      }
+      function isValidEmail(email) {
+      const emailRegex = /S+@S+.S+/;
+      return emailRegex.test(email);
+      }
+      });
+    </script>
+  </body>
+</html>
