@@ -1,0 +1,533 @@
+lab 1 -a
+table html
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Simple Table</title>
+</head>
+<body>
+<table border="1">
+<tr>
+<th>Header 1</th>
+<th>Header 2</th>
+</tr>
+<tr>
+<td>Row 1, Cell 1</td>
+<td>Row 1, Cell 2</td>
+</tr>
+<tr>
+<td>Row 2, Cell 1</td>
+<td>Row 2, Cell 2</td>
+</tr>
+</table>
+</body>
+</html>
+
+***********************************************************************************************************************************************
+
+lab 1-b
+
+form html
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Simple Form</title>
+</head>
+<body>
+<h2>Registration Form</h2>
+<form action="process.php" method="post">
+<label for="username">Username:</label>
+<input type="text" id="username" name="username" required><br><br>
+
+<label for="email">Email:</label>
+<input type="email" id="email" name="email" required><br><br>
+
+<label for="password">Password:</label>
+<input type="password" id="password" name="password" required><br><br>
+
+<label for="about">About:</label><br>
+<textarea id="about" name="about" rows="4" cols="50"></textarea><br><br>
+
+<input type="submit" value="Submit">
+</form>
+</body>
+</html>
+
+
+************************************************************************************************************************************************
+
+lab 2
+
+inline internal and external css
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSS Examples</title>
+<style>
+/* Internal CSS */
+h1 {
+color: blue;
+}
+
+/* Embedded CSS */
+.paragraph {
+font-size: 16px;
+text-align: center;
+}
+</style>
+</head>
+<body>
+<h1 style="color: red;">Inline CSS Example</h1>
+<p class="paragraph">This is a paragraph with internal and embedded CSS styles.</p>
+</body>
+</html>
+
+
+*********************************************************************************************************************************************
+
+lab 3
+
+form using bootstrap
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Simple Bootstrap Form</title>
+<!-- Include Bootstrap CSS from a CDN -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+<h2>Registration Form</h2>
+<form>
+<div class="form-group">
+<label for="username">Username:</label>
+<input type="text" class="form-control" id="username" name="username" required>
+</div>
+
+<div class="form-group">
+<label for="email">Email:</label>
+<input type="email" class="form-control" id="email" name="email" required>
+</div>
+
+<div class="form-group">
+<label for="password">Password:</label>
+<input type="password" class="form-control" id="password" name="password" required>
+</div>
+
+<div class="form-group">
+<label for="about">About:</label>
+<textarea class="form-control" id="about" name="about" rows="4"></textarea>
+</div>
+
+<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+
+</body>
+</html>
+
+************************************************************************************************************************************************
+
+lab - 4
+
+credential validation js
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registration Form</title>
+</head>
+<body>
+<h2>Registration Form</h2>
+<form onsubmit="return validateForm()">
+<div>
+<label for="username">Username:</label>
+<input type="text" id="username" name="username" required>
+<p id="usernameError" style="color: red;"></p>
+</div>
+
+<div>
+<label for="email">Email:</label>
+<input type="email" id="email" name="email" required>
+<p id="emailError" style="color: red;"></p>
+</div>
+
+<div>
+<label for="password">Password:</label>
+<input type="password" id="password" name="password" required>
+</div>
+
+<div>
+<label for="confirmPassword">Confirm Password:</label>
+<input type="password" id="confirmPassword" required>
+<p id="passwordError" style="color: red;"></p>
+</div>
+
+<button type="submit">Register</button>
+</form>
+
+<script>
+function validateForm() {
+var username = document.getElementById('username').value;
+var email = document.getElementById('email').value;
+
+
+var password = document.getElementById('password').value;
+var confirmPassword = document.getElementById('confirmPassword').value;
+
+var usernameError = document.getElementById('usernameError');
+var emailError = document.getElementById('emailError');
+
+
+var passwordError = document.getElementById('passwordError');
+
+// Simple username validation (minimum 3 characters)
+if (username.length < 3) {
+usernameError.textContent = 'Username must be at least 3 characters.';
+return false;
+} else {
+usernameError.textContent = '';
+}
+
+// Simple email validation
+if (!isValidEmail(email)) {
+emailError.textContent = 'Invalid email address.';
+return false;
+} else {
+emailError.textContent = '';
+}
+
+// Password and confirm password validation
+if (password !== confirmPassword) {
+passwordError.textContent = 'Passwords do not match.';
+return false;
+} else {
+passwordError.textContent = '';
+}
+
+return true;
+}
+
+function isValidEmail(email) {
+// A simple email validation regex
+var emailRegex = /S+@S+.S+/;
+return emailRegex.test(email);
+}
+</script>
+</body>
+</html>
+
+***********************************************************************************************************************************************
+
+lab 5
+
+keyboard and mouse events
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Keyboard and Mouse Actions</title>
+</head>
+<body>
+<h2>Keyboard and Mouse Actions</h2>
+
+<!-- Keyboard Actions -->
+<p>Press any key: <span id="keyPressResult">Press a key...</span></p>
+<p>Release a key: <span id="keyReleaseResult">Release a key...</span></p>
+
+<!-- Mouse Actions -->
+<button id="clickButton">Click me</button>
+<p id="mouseHoverArea">Hover over this text.</p>
+
+<script>
+// Keyboard Actions
+document.addEventListener('keydown', function (event) {
+document.getElementById('keyPressResult').textContent = `Key pressed: ${event.key}`;
+});
+
+document.addEventListener('keyup', function (event) {
+document.getElementById('keyReleaseResult').textContent = `Key released: ${event.key}`;
+});
+
+// Mouse Actions
+document.getElementById('clickButton').addEventListener('click', function () {
+alert('Button Clicked!');
+});
+
+document.getElementById('mouseHoverArea').addEventListener('mouseenter', function () {
+document.getElementById('mouseHoverArea').textContent = 'Mouse is over this text.';
+});
+
+document.getElementById('mouseHoverArea').addEventListener('mouseleave', function () {
+document.getElementById('mouseHoverArea').textContent = 'Hover over this text.';
+});
+</script>
+</body>
+</html>
+
+************************************************************************************************************************************************
+
+lab - 6
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>XMLHttpRequest Example</title>
+</head>
+<body>
+<h2>Retrieve Data from Online Source</h2>
+<button id="loadDataButton">Load Data</button>
+<div id="output"></div>
+
+<script>
+// Function to make an XMLHttpRequest and retrieve data from an online source
+function loadData() {
+var xhr = new XMLHttpRequest();
+xhr.open('GET', 'https://example.com/your-data-url', true);
+
+xhr.onreadystatechange = function() {
+if (xhr.readyState === 4 && xhr.status === 200) {
+var responseText = xhr.responseText;
+document.getElementById('output').textContent = responseText;
+}
+};
+
+xhr.send();
+}
+
+// Attach the loadData function to the button click event
+document.getElementById('loadDataButton').addEventListener('click', loadData);
+</script>
+</body>
+</html>
+
+************************************************************************************************************************************************
+
+lab 9
+
+online validation using jquery
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Form Validation</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<h2>Registration Form</h2>
+<form id="registrationForm">
+<div>
+<label for="username">Username:</label>
+<input type="text" id="username" name="username">
+<p class="error" id="usernameError"></p>
+</div>
+
+<div>
+<label for="email">Email:</label>
+<input type="email" id="email" name="email">
+<p class="error" id="emailError"></p>
+</div>
+
+<div>
+<label for="password">Password:</label>
+<input type="password" id="password" name="password">
+</div>
+
+<div>
+<label for="confirmPassword">Confirm Password:</label>
+<input type="password" id="confirmPassword">
+<p class="error" id="passwordError"></p>
+</div>
+
+<button type="submit">Register</button>
+</form>
+
+<button id="submittedAlert" style="display: none">Submitted</button>
+
+<script>
+$(document).ready(function () {
+$('#registrationForm').submit(function (event) {
+event.preventDefault();
+if (validateForm()) {
+$('#submittedAlert').show();
+}
+});
+
+function validateForm() {
+const username = $('#username').val();
+const email = $('#email').val();
+const password = $('#password').val();
+const confirmPassword = $('#confirmPassword').val();
+
+const errors = $('.error').text('');
+
+if (username.length < 3) {
+errors.filter('#usernameError').text('Username must be at least 3 characters.');
+}
+
+if (!isValidEmail(email)) {
+errors.filter('#emailError').text('Invalid email address.');
+}
+
+if (password !== confirmPassword) {
+errors.filter('#passwordError').text('Passwords do not match.');
+}
+
+return errors.filter('.error:empty').length === 0;
+}
+
+function isValidEmail(email) {
+const emailRegex = /S+@S+.S+/;
+return emailRegex.test(email);
+}
+});
+</script>
+</body>
+</html>
+
+************************************************************************************************************************************************
+
+lab 10 , 11
+
+simple app using django
+
+cmd:
+django-admin startproject mysite
+
+cmd:
+python manage.py runserver
+
+
+change to same dir as manage.py
+python manage.py startapp polls
+
+
+polls/views.py
+from django.http import HttpResponse
+
+def index(request):
+return HttpResponse("Hello, world. You're at the polls index.")
+
+
+polls/urls.py
+from django.urls import path
+
+from . import views
+
+urlpatterns = [
+path("", views.index, name="index"),
+]
+
+
+mysite/urls.py
+from django.contrib import admin
+from django.urls import include, path
+
+urlpatterns = [
+path("polls/", include("polls.urls")),
+path("admin/", admin.site.urls),
+]
+
+cmd:
+python manage.py migrate
+
+polls/models.py
+from django.db import models
+
+
+class Question(models.Model):
+question_text = models.CharField(max_length=200)
+pub_date = models.DateTimeField("date published")
+def __str__(self):
+return self.question_text
+
+
+class Choice(models.Model):
+question = models.ForeignKey(Question, on_delete=models.CASCADE)
+choice_text = models.CharField(max_length=200)
+votes = models.IntegerField(default=0)
+def __str__(self):
+return self.choice_text
+
+
+mysite/settings.py
+INSTALLED_APPS = [
+"polls.apps.PollsConfig", //this wont be available initially, type this inside INSTALLED_APPS
+"django.contrib.admin",
+"django.contrib.auth",
+"django.contrib.contenttypes",
+"django.contrib.sessions",
+"django.contrib.messages",
+"django.contrib.staticfiles",
+]
+
+cmd:
+python manage.py makemigrations polls
+
+cmd:
+python manage.py sqlmigrate polls 0001
+
+cmd:
+python manage.py migrate
+
+*imp: ensure u are in right directory
+create admin user(cmd):
+python manage.py createsuperuser
+//set username, pass, email
+
+cmd://start server
+python manage.py runserver
+
+
+***********************************************************************************************************************************************
+
+lab 11
+
+scrapy web scraping
+
+cmd
+pip instal scrapy
+
+cmd
+scrapy startproject scrapeme_scraper
+
+cmd
+cd scrapeme_scraper
+scrapy genspider scrapeme scrapeme.live/shop/
+
+
+scrapeme_spider/spiders/scrapme.py
+
+import scrapy
+
+class ScrapemeSpider(scrapy.Spider):
+name = "scrapeme"
+allowed_domains = ["scrapeme.live"]
+start_urls = ["https://scrapeme.live/shop/"]
+
+def parse(self, response):
+# get all HTML product elements
+products = response.css(".product")
+# iterate over the list of products
+for product in products:
+# get the two price text nodes (currency + cost) and
+# contatenate them
+price_text_elements = product.css(".price *::text").getall()
+price = "".join(price_text_elements)
+
+# return a generator for the scraped item
+yield {
+"name": product.css("h2::text").get(),
+"image": product.css("img").attrib["src"],
+"price": price,
+"url": product.css("a").attrib["href"],
+}
+
+
+cmd
+scrapy crawl scrapeme -O products.csv
+//same dir as scrapme.py spider
