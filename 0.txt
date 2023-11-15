@@ -6,6 +6,7 @@ all.txt
 bootstrap-form.txt
 bootstrap-more.txt
 css.txt
+dbdjango.txt
 django.txt
 form.txt
 jquery.txt
