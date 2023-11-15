@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>XMLHttpRequest Example</title>
+  </head>
+  <body>
+    <h2>Retrieve Data from Online Source</h2>
+    <button id="loadDataButton">Load Data</button>
+    <div id="output"></div>
+    <script>
+      function loadData() {
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', 'https://example.com/your-data-url', true);
+      xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+      var responseText = xhr.responseText;
+      document.getElementById('output').textContent = responseText;}};
+      xhr.send();}
+      document.getElementById('loadDataButton').addEventListener('click', loadData);
+    </script>
+  </body>
+</html>
