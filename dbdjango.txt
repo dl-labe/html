@@ -1,3 +1,29 @@
+cmd:
+django-admin startproject myProj
+
+change to same dir as manage.py
+python manage.py startapp myApp
+
+myApp/views.py
+from django.http import HttpResponse
+def index(request):
+return HttpResponse("Hello")
+
+myApp/urls.py
+from django.urls import path
+from . import views
+urlpatterns = [
+path("", views.index, name="index"),
+]
+
+myProj/urls.py
+from django.contrib import admin
+from django.urls import include, path
+urlpatterns = [
+path("", include("polls.urls")),
+path("admin/", admin.site.urls),
+]
+
 Make Hello World App
 cmd:
 python manage.py migrate
