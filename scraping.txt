@@ -1,0 +1,37 @@
+cmd
+pip instal scrapy
+scrapy startproject scrapeme_scraper
+cd scrapeme_scraper
+
+scrapy genspider scrapeme scrapeme.live/shop/
+scrapeme_spider/spiders/scrapme.py
+
+import scrapy
+
+class ScrapemeSpider(scrapy.Spider):
+name = "scrapeme"
+allowed_domains = ["scrapeme.live"]
+start_urls = ["https://scrapeme.live/shop/"]
+
+def parse(self, response):
+# get all HTML product elements
+products = response.css(".product")
+# iterate over the list of products
+for product in products:
+# get the two price text nodes (currency + cost) and
+# contatenate them
+price_text_elements = product.css(".price *::text").getall()
+price = "".join(price_text_elements)
+
+# return a generator for the scraped item
+yield {
+"name": product.css("h2::text").get(),
+"image": product.css("img").attrib["src"],
+"price": price,
+"url": product.css("a").attrib["href"],
+}
+
+
+cmd
+scrapy crawl scrapeme -O products.csv
+//same dir as scrapme.py spider
