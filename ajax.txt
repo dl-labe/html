@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>XMLHttpRequest Example</title>
-  </head>
-  <body>
-    <h2>Retrieve Data from Online Source</h2>
-    <button id="loadDataButton">Load Data</button>
-    <div id="output"></div>
-    <script>
-      function loadData() {
-      var xhr = new XMLHttpRequest();
-      xhr.open('GET', 'https://example.com/your-data-url', true);
-      xhr.onreadystatechange = function() {
-      if (xhr.readyState === 4 && xhr.status === 200) {
-      var responseText = xhr.responseText;
-      document.getElementById('output').textContent = responseText;}};
-      xhr.send();}
-      document.getElementById('loadDataButton').addEventListener('click', loadData);
+<head>
+<meta charset="ISO-8859-1">
+<title>AJAX File</title>
+</head>
+<body>
+<h2>AJAX File Example</h2>
+<p id="demo">Let AJAX change this text.</p>
+<button type="button" onclick="loadDoc()">Change Content</button>
+<script>
+    function loadDoc() {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+          if (this.status == 200) {
+            document.getElementById("demo").innerHTML = this.responseText;
+          } else {
+            console.error("Request failed with status:", this.status);
+          }
+        }
+      };
+      xhttp.open("GET", "rec.txt", true);
+      xhttp.send();
+    }
     </script>
-  </body>
+</body>
 </html>
