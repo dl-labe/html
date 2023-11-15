@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form</title>
+    <script>
+      function validate(){
+        var name = document.getElementById("name");
+        var email = document.getElementById("email");
+        var password = document.getElementById("password");
+        var validate_password = document.getElementById("validate_password");
+        if(name.value.length<5){alert("Error");return false;}
+        if(email.value.lenght<10){return false;}
+        if(password.value != validate_password.value){return false}
+      }
+    </script>
+  </head>
+  
+  <body>
+      <h1 class="title1">Form</h1>
+      <div>
+        <form onsubmit="validate()">
+          <label class="name">Name</label><br>
+          <input type="text" id="name"><br>
+          <label>Email</label><br>
+          <input type="email" id="email"><br>
+          <label>password</label><br>
+          <input type="password" id="password"><br>
+          <label>validate_password</label><br>
+          <input type="password" id="validate_password"><br><br>
+          <label>Sex:</label><br>
+          <label>Male</label>
+          <input type="radio" name="sex" value="Male">
+          <label>Female</label>
+          <input type="radio" name="sex" value="Female"><br><br>
+          <label>State</label>
+          <select>
+            <option>Kerala</option>
+            <option>Assam</option>
+            <option>Bihar</option>
+            <option>Bombay</option>
+          </select><br>
+          <label>Noob?</label>
+          <input type="checkbox"><br><br>
+          <input type="submit">
+        </form>  
+      </div>
+  </body>
+</html>
